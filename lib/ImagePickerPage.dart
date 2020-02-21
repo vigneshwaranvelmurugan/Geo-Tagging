@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 
+import 'FirebaseNotifications.dart';
+
 class ImagePickerPage extends StatefulWidget {
   @override
   _ImagePickerPageState createState() => _ImagePickerPageState();
@@ -19,6 +21,13 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
     });
   }
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print('helloinit');
+    new FirebaseNotifications().setUpFirebase();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
